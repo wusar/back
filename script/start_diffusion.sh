@@ -1,0 +1,2 @@
+#!/bin/sh
+docker container run --rm -d -p 8501:8501 -e STREAMLIT_SERVER_HEADLESS=true -e "WEBUI_SCRIPT=webui_streamlit.py" -e "VALIDATE_MODELS=false" -v "${PWD}/outputs:/sd/outputs" --gpus all hlky/sd-webui:runpod

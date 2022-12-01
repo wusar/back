@@ -1,0 +1,202 @@
+956320 ARK 82490 DEBUG ark/ops/ops_matmul.cc:19 matmul <1,512,1,512> <1,512,1,512> <1,512,1,512> <1,512,1,512> 1
+178575 ARK 82490 DEBUG ark/sched/sched.cc:26 create baseline scheduler
+178693 ARK 82490 DEBUG ark/sched/sched_model.cc:74 sched_op_name: op_0_matmul
+178700 ARK 82490 DEBUG ark/sched/sched_op.cc:603 op: matmul cfg: 4 83456 2 1 1 0
+178709 ARK 82490 DEBUG ark/sched/sched_op.cc:626 SchedOp: op_0_matmul tile size: (1,8,8)
+178714 ARK 82490 DEBUG ark/sched/sched_model.cc:74 sched_op_name: op_1_add
+178717 ARK 82490 DEBUG ark/sched/sched_op.cc:603 op: add cfg: 1 0 2 1 0 0
+178720 ARK 82490 DEBUG ark/sched/sched_op.cc:626 SchedOp: op_1_add tile size: (1,8,64)
+178723 ARK 82490 DEBUG ark/sched/sched_model.cc:74 sched_op_name: op_2_scale
+178726 ARK 82490 DEBUG ark/sched/sched_op.cc:603 op: scale cfg: 1 0 1 1 0 0
+178729 ARK 82490 DEBUG ark/sched/sched_op.cc:626 SchedOp: op_2_scale tile size: (1,8,64)
+178741 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c572028430 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178748 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ba10 pads <1,64,1,64> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178754 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ba10 pads <1,64,1,64> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178760 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ba10 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178767 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ba10 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178773 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ba10 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178779 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ebe0 pads <1,64,1,64> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178785 ARK 82490 DEBUG ark/sched/sched_model.cc:269 Tensor buf 0x55c57202ec00 pads <1,64,1,64> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+178793 ARK 82490 DEBUG ark/sched/sched.cc:35 buf_info: 524288 offset: 0
+178797 ARK 82490 DEBUG ark/sched/sched.cc:35 buf_info: 524288 offset: 0
+178801 ARK 82490 DEBUG ark/sched/sched.cc:35 buf_info: 524288 offset: 0
+178805 ARK 82490 DEBUG ark/sched/sched.cc:35 buf_info: 524288 offset: 0
+183592 ARK 82490 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b200000 map 0x7f6d6390a000 bytes 65536
+184076 ARK 82490 INFO ark/ipc/ipc_hosts.cc:39 HOST 0: 127.0.0.1
+184126 ARK 82490 DEBUG ark/ipc/ipc_socket.cc:39 listen 127.0.0.1:42000
+189000 ARK 82490 DEBUG ark/net/net_ib.cc:237 opened IB device: mlx5_ib0
+189924 ARK 82490 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 0 off 0x0 bytes 524288
+189950 ARK 82490 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 1 off 0x80000 bytes 524288
+189954 ARK 82490 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 2 off 0x100000 bytes 524288
+189959 ARK 82490 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 3 off 0x180000 bytes 524288
+189964 ARK 82490 DEBUG ark/gpu/gpu_mgr.cc:146 Requested 2097152 bytes
+192162 ARK 82490 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b400000 map 0x7f6d636a7000 bytes 2097152
+192224 ARK 82490 DEBUG ark/gpu/gpu_comm_sw.cc:265 RANK 0 config done
+192302 ARK 82490 DEBUG ark/sched/sched.cc:73 start schedule model
+192322 ARK 82490 DEBUG ark/sched/sched_model.cc:100 sop_depth: 0
+192326 ARK 82490 DEBUG ark/sched/sched_model.cc:195 sched_tile_idx: 64
+192329 ARK 82490 DEBUG ark/sched/sched_model.cc:100 sop_depth: 0
+192332 ARK 82490 DEBUG ark/sched/sched_model.cc:195 sched_tile_idx: 512
+192336 ARK 82490 DEBUG ark/sched/sched_model.cc:100 sop_depth: 0
+192340 ARK 82490 DEBUG ark/sched/sched_model.cc:195 sched_tile_idx: 512
+192343 ARK 82490 DEBUG ark/sched/sched.cc:76 created sched model
+192347 ARK 82490 DEBUG ark/sched/sched_codegen.cc:173 codegen codes body
+192372 ARK 82490 DEBUG ark/sched/sched_codegen.cc:187 codegen_tile_task: %sop_0_matmul
+192383 ARK 82490 DEBUG ark/sched/sched_codegen.cc:187 codegen_tile_task: %sop_1_add
+192393 ARK 82490 DEBUG ark/sched/sched_codegen.cc:187 codegen_tile_task: %sop_2_scale
+192434 ARK 82490 DEBUG ark/sched/sched_test.cc:56 code: // tile dims: (8, 8, 1)
+__noinline__ __device__ void op_0_matmul_tile_task(int tile_idx) {
+ark::matmul<512, 512, 512, false, false, 0, false, 128, 83456, 64, 64, 64>((ark::half *)&_ARK_BUF[1048576], (ark::half *)&_ARK_BUF[0], (ark::half *)&_ARK_BUF[524288], (tile_idx & 7), (tile_idx >> 3) & 7, tile_idx >> 6);
+}
+// tile dims: (64, 8, 1)
+__noinline__ __device__ void op_1_add_tile_task(int tile_idx) {
+ark::add<512, 512, 0, 32, 0, 64, 8, 1>((ark::half *)&_ARK_BUF[1048576], (ark::half *)&_ARK_BUF[1048576], (ark::half *)&_ARK_BUF[1572864], (tile_idx & 63), (tile_idx >> 6) & 7, tile_idx >> 9);
+}
+// tile dims: (64, 8, 1)
+__noinline__ __device__ void op_2_scale_tile_task(int tile_idx) {
+ark::scale<512, 512, 32, 0, 64, 8, 1>((ark::half *)&_ARK_BUF[1048576], (ark::half *)&_ARK_BUF[1048576], 2.3, (tile_idx & 63), (tile_idx >> 6) & 7, tile_idx >> 9);
+}
+__noinline__ __device__ void op_0_matmul() {
+if(blockIdx.x < 64){
+  if(threadIdx.x<128){
+   op_0_matmul_tile_task(1*(blockIdx.x - 0) + threadIdx.x / 128 + 0);
+  }
+ }
+}
+__noinline__ __device__ void op_1_add() {
+if(blockIdx.x < 80){
+  if(threadIdx.x<160){
+   op_1_add_tile_task(5*(blockIdx.x - 0) + threadIdx.x / 32 + 0);
+  }
+ }
+if(blockIdx.x >= 80&& blockIdx.x < 108){
+  if(threadIdx.x<128){
+   op_1_add_tile_task(4*(blockIdx.x - 80) + threadIdx.x / 32 + 400);
+  }
+ }
+}
+__noinline__ __device__ void op_2_scale() {
+if(blockIdx.x < 80){
+  if(threadIdx.x<160){
+   op_2_scale_tile_task(5*(blockIdx.x - 0) + threadIdx.x / 32 + 0);
+  }
+ }
+if(blockIdx.x >= 80&& blockIdx.x < 108){
+  if(threadIdx.x<128){
+   op_2_scale_tile_task(4*(blockIdx.x - 80) + threadIdx.x / 32 + 400);
+  }
+ }
+}
+__device__ void ark_loop_body(int _iter) {
+  op_0_matmul();
+  ark::sync_gpu<108>(_ARK_LOOP_SYNC_STATE);
+  op_1_add();
+  ark::sync_gpu<108>(_ARK_LOOP_SYNC_STATE);
+  op_2_scale();
+  ark::sync_gpu<108>(_ARK_LOOP_SYNC_STATE);
+}
+
+193803 ARK 82490 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b210000 map 0x7f6d63693000 bytes 65536
+195679 ARK 82490 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b600000 map 0x7f6d62e91000 bytes 8388608
+200418 ARK 82490 INFO ark/gpu/gpu_compile.cc:224 Compiling /tmp/ark_F5y8yAwWGSNCqHGS.cu
+200466 ARK 82490 DEBUG ark/gpu/gpu_compile.cc:225 /usr/local/cuda/bin/nvcc -cubin -maxrregcount 255 -ccbin g++ -std c++14 -lcuda --define-macro=ARK_TARGET_CUDA_ARCH=80 --define-macro=ARK_COMM_SW=1 -I/home/v-lifanwu/.ark/include -I/home/v-lifanwu/.ark/include/kernels -gencode arch=compute_80,code=sm_80 -o /tmp/ark_F5y8yAwWGSNCqHGS.cubin /tmp/ark_F5y8yAwWGSNCqHGS.cu 2>&1
+333987 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.00926971
+334072 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.00395584
+334078 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.0166016
+334082 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.00650787
+334085 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.0199738
+334088 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: 0.0016737
+334092 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: 0.0139465
+334095 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.0261841
+334098 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.0132904
+334103 ARK 82490 DEBUG ark/sched/sched_test.cc:89 output_data1: -0.0222473
+448353 ARK 82721 DEBUG ark/ops/ops_matmul.cc:19 matmul <1,512,1,512> <1,512,1,512> <1,512,1,512> <1,512,1,512> 1
+663254 ARK 82721 DEBUG ark/scheduler.cc:2270 splitk 3 inner_dim 512 unitk 192
+663366 ARK 82721 DEBUG ark/ops/ops_matmul.cc:19 matmul <1,512,1,512> <1,512,1,512> <1,512,1,512> <1,512,1,512> 3
+663378 ARK 82721 DEBUG ark/model.cc:103 sharding <3,512,1,512> 0 1
+663384 ARK 82721 DEBUG ark/model.cc:92 identity <1,512,1,512>
+663388 ARK 82721 DEBUG ark/model.cc:38 refer <1,512,1,512> <1,512,1,512> <0,0,0,0>
+663411 ARK 82721 DEBUG ark/model.cc:92 identity <1,512,1,512>
+663414 ARK 82721 DEBUG ark/model.cc:38 refer <1,512,1,512> <1,512,1,512> <1,0,0,0>
+663420 ARK 82721 DEBUG ark/model.cc:92 identity <1,512,1,512>
+663425 ARK 82721 DEBUG ark/model.cc:38 refer <1,512,1,512> <1,512,1,512> <2,0,0,0>
+663430 ARK 82721 DEBUG ark/model.cc:103 sharding <1,512,1,512> 3 192
+663434 ARK 82721 DEBUG ark/model.cc:92 identity <1,512,1,192>
+663438 ARK 82721 DEBUG ark/model.cc:38 refer <1,512,1,192> <1,512,1,192> <0,0,0,0>
+663444 ARK 82721 DEBUG ark/model.cc:92 identity <1,512,1,192>
+663447 ARK 82721 DEBUG ark/model.cc:38 refer <1,512,1,192> <1,512,1,192> <0,0,0,192>
+663454 ARK 82721 DEBUG ark/model.cc:92 identity <1,512,1,128>
+663460 ARK 82721 DEBUG ark/model.cc:38 refer <1,512,1,128> <1,512,1,128> <0,0,0,384>
+663466 ARK 82721 DEBUG ark/model.cc:103 sharding <1,512,1,512> 1 192
+663471 ARK 82721 DEBUG ark/model.cc:92 identity <1,192,1,512>
+663477 ARK 82721 DEBUG ark/model.cc:38 refer <1,192,1,512> <1,192,1,512> <0,0,0,0>
+663483 ARK 82721 DEBUG ark/model.cc:92 identity <1,192,1,512>
+663488 ARK 82721 DEBUG ark/model.cc:38 refer <1,192,1,512> <1,192,1,512> <0,192,0,0>
+663494 ARK 82721 DEBUG ark/model.cc:92 identity <1,128,1,512>
+663498 ARK 82721 DEBUG ark/model.cc:38 refer <1,128,1,512> <1,128,1,512> <0,384,0,0>
+663505 ARK 82721 DEBUG ark/ops/ops_matmul.cc:19 matmul <1,512,1,192> <1,192,1,512> <1,512,1,512> <1,512,1,512> 1
+663513 ARK 82721 DEBUG ark/ops/ops_matmul.cc:19 matmul <1,512,1,192> <1,192,1,512> <1,512,1,512> <1,512,1,512> 1
+663519 ARK 82721 DEBUG ark/ops/ops_matmul.cc:19 matmul <1,512,1,128> <1,128,1,512> <1,512,1,512> <1,512,1,512> 1
+663526 ARK 82721 DEBUG ark/model.cc:92 identity <3,512,1,512>
+663531 ARK 82721 DEBUG ark/model.cc:38 refer <3,512,1,512> <3,512,1,512> <0,0,0,0>
+663545 ARK 82721 DEBUG ark/ops/ops_reduce.cc:12 reduce <3,512,1,512> <3,512,1,512> 0
+663554 ARK 82721 DEBUG ark/scheduler.cc:2296 translate: tns 0x55c572029490 (tnsbuf 0x55c572029ed0) -> tns 0x55c5725ed3c0 (tnsbuf 0x55c5725f2120)
+663569 ARK 82721 DEBUG ark/scheduler.cc:2377 Tensor buf 0x55c5725f2120 update_pads 8 64
+663575 ARK 82721 DEBUG ark/scheduler.cc:2377 Tensor buf 0x55c5725f2120 update_pads 8 64
+663608 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f0100 pads <1,64,1,64> padding <1,512,1,192> -> <1,512,1,512> exported 0 trigger_first 0
+663629 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f0100 pads <1,64,1,64> padding <1,512,1,192> -> <1,512,1,512> exported 0 trigger_first 0
+663635 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f0100 pads <1,64,1,64> padding <1,512,1,128> -> <1,512,1,512> exported 0 trigger_first 0
+663639 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f2120 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663644 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f2120 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663647 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f2120 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663653 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f2120 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663658 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f2120 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663663 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4080 pads <1,64,1,64> padding <1,192,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663668 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4080 pads <1,64,1,64> padding <1,192,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663675 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4080 pads <1,64,1,64> padding <1,128,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+663680 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4e80 pads <1,64,1,64> padding <1,512,1,512> -> <3,512,1,512> exported 0 trigger_first 0
+663684 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4e80 pads <1,64,1,64> padding <1,512,1,512> -> <3,512,1,512> exported 0 trigger_first 0
+663697 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4e80 pads <1,64,1,64> padding <1,512,1,512> -> <3,512,1,512> exported 0 trigger_first 0
+663703 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f4e80 pads <1,64,1,8> padding <3,512,1,512> -> <3,512,1,512> exported 0 trigger_first 0
+663708 ARK 82721 DEBUG ark/scheduler.cc:2076 Tensor buf 0x55c5725f74d0 pads <1,64,1,8> padding <1,512,1,512> -> <1,512,1,512> exported 0 trigger_first 0
+668451 ARK 82721 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b200000 map 0x7f6d6390a000 bytes 65536
+668933 ARK 82721 INFO ark/ipc/ipc_hosts.cc:39 HOST 0: 127.0.0.1
+668981 ARK 82721 DEBUG ark/ipc/ipc_socket.cc:39 listen 127.0.0.1:42000
+673807 ARK 82721 DEBUG ark/net/net_ib.cc:237 opened IB device: mlx5_ib0
+674718 ARK 82721 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 0 off 0x0 bytes 524288
+674744 ARK 82721 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 1 off 0x80000 bytes 524288
+674750 ARK 82721 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 2 off 0x100000 bytes 1572864
+674755 ARK 82721 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 3 off 0x280000 bytes 524288
+674759 ARK 82721 DEBUG ark/gpu/gpu_mgr.cc:320 GPU Buffer test_scheduler_simple_mm ID 4 off 0x300000 bytes 524288
+674763 ARK 82721 DEBUG ark/gpu/gpu_mgr.cc:146 Requested 3670016 bytes
+676869 ARK 82721 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b400000 map 0x7f6d63527000 bytes 3670016
+676940 ARK 82721 DEBUG ark/gpu/gpu_comm_sw.cc:265 RANK 0 config done
+677014 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+677039 ARK 82721 DEBUG ark/scheduler.cc:2840 768 warps in depth
+677043 ARK 82721 DEBUG ark/scheduler.cc:2847   op1: tnum 64 wnum 4 wrem 768
+677048 ARK 82721 DEBUG ark/scheduler.cc:2847   op2: tnum 64 wnum 4 wrem 512
+677052 ARK 82721 DEBUG ark/scheduler.cc:2847   op3: tnum 64 wnum 4 wrem 256
+677057 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+677062 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+677066 ARK 82721 DEBUG ark/scheduler.cc:2840 512 warps in depth
+677069 ARK 82721 DEBUG ark/scheduler.cc:2847   op0: tnum 512 wnum 1 wrem 512
+677073 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+677077 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+677082 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+677085 ARK 82721 DEBUG ark/scheduler.cc:2840 0 warps in depth
+678432 ARK 82721 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b210000 map 0x7f6d63513000 bytes 65536
+680249 ARK 82721 DEBUG ark/gpu/gpu_mem.cc:140 Created GpuMem addr 7f6d3b800000 map 0x7f6d62d11000 bytes 8388608
+684948 ARK 82721 INFO ark/gpu/gpu_compile.cc:224 Compiling /tmp/ark_BdwW1aDz7y1TQJcR.cu
+685011 ARK 82721 DEBUG ark/gpu/gpu_compile.cc:225 /usr/local/cuda/bin/nvcc -cubin -maxrregcount 255 -ccbin g++ -std c++14 -lcuda --define-macro=ARK_TARGET_CUDA_ARCH=80 --define-macro=ARK_COMM_SW=1 -I/home/v-lifanwu/.ark/include -I/home/v-lifanwu/.ark/include/kernels -gencode arch=compute_80,code=sm_80 -o /tmp/ark_BdwW1aDz7y1TQJcR.cubin /tmp/ark_BdwW1aDz7y1TQJcR.cu 2>&1
+023881 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.00926971
+023970 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.00395203
+023977 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.0166016
+023981 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.00650406
+023985 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.0199738
+023988 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: 0.0016737
+023994 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: 0.0139465
+023998 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.0261841
+024001 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.0132904
+024005 ARK 82721 DEBUG ark/sched/sched_test.cc:142 output_data2: -0.0222473
+137243 ARK 82489 INFO ark/sched/sched_test.cc:149  scheduler compare test:  total_bytes: 524288 iter: 1 mse: 0 max_err: 0%
+137502 ARK 82489 INFO ark/sched/sched_test.cc:160 unittest succeed: scheduler_test (elapsed 6.196s)

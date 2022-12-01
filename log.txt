@@ -1,0 +1,33 @@
+test_all_reduce_correctness
+time on GPU0: 0.092928 ms
+time on GPU1: 0.090944 ms
+time on GPU0: 0.108448 ms
+time on GPU1: 0.108864 ms
+total_error:0 max_error:0
+test_ark_kernel_correctness
+time on GPU0: 0.223200 ms
+time on GPU1: 0.216384 ms
+time on GPU0: 0.232256 ms
+time on GPU1: 0.231488 ms
+total_error:0 max_error:0
+test merge ARK comm+comp
+time on GPU0: 0.214944 ms
+time on GPU1: 0.221888 ms
+test not merge ARK comm+comp
+time on GPU0: 0.224064 ms
+time on GPU1: 0.220544 ms
+test ARK comp
+time on GPU0: 0.122304 ms
+time on GPU1: 0.121888 ms
+test ARK comm
+time on GPU0: 0.093792 ms
+time on GPU1: 0.091776 ms
+nccl comm time:
+time on GPU0: 0.114016 ms
+time on GPU1: 0.114080 ms
+nccl matmul time:
+time on GPU0: 0.121280 ms
+time on GPU1: 0.120416 ms
+nccl comm+matmul time:
+time on GPU0: 0.229152 ms
+time on GPU1: 0.229536 ms
